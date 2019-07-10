@@ -37,3 +37,6 @@ const API = {
   });
   }
 };
+
+
+export {API}

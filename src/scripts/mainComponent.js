@@ -1,3 +1,4 @@
+import {submitPoiEl} from "./eventListeners.js"
 function createDash () {
   let mainContainer = document.querySelector("#container")
 let dashContainer = document.createElement("section")
@@ -33,7 +34,7 @@ interestDescripInput.setAttribute("rows", "5")
 let interestCostContainer = document.createElement("fieldset")
 let interestCostInput = document.createElement("input")
 let interestCostLabel = document.createElement("label")
-interestCostLabel.textContent = "Point of Interest Cost: "
+interestCostLabel.textContent = "Point of Interest Cost: $ "
 interestCostInput.setAttribute("type", "text")
 interestCostInput.setAttribute("name", "new-interest-cost")
 interestCostInput.setAttribute("id", "newInterest-cost")
@@ -43,7 +44,7 @@ let interestPlaceLabel = document.createElement("label")
 interestPlaceLabel.textContent = "Point of Interest Location: "
 let interestPlaceSelector = document.createElement("select")
 interestPlaceSelector.setAttribute("name", "POIPlace")
-interestPlaceSelector.setAttribute("id", "POI-place")
+interestPlaceSelector.setAttribute("id", "newInterest-place")
 let italyPlace = document.createElement ("option")
 let switzerlandPlace = document.createElement ("option")
 let francePlace = document.createElement ("option")
@@ -86,10 +87,34 @@ dashContainer.appendChild(interestsDiv)
 dashContainer.appendChild(newInterestsContainer)
 
 mainContainer.appendChild(dashContainer)
+submitPoiEl()
+
 
 }
 
 
+function interestComponent (id, name, location, description, cost, review ) {
+  if (review !== "") {
+    return `
+    <div id="POI-${id}">
+    <h1>Name: ${name}<h1>
+    <h3>Location: ${location}</h3>
+    <p>Description: ${description}<p>
+    <h4 id="cost-${id}">Cost:  $${cost}</h4>
+    <p id="review-${id}">Review: ${review}</p>
+    <button id="editBtn-${id}" class="edit-btn">Edit Point of Interest</button>
+    </div><hr>
+    `
+  }
+  return `
+  <div id="POI-${id}">
+  <h1>Name: ${name}<h1>
+  <h3>Location: ${location}</h3>
+  <p>Description: ${description}<p>
+  <h4 id="cost-${id}">Cost:  $${cost}</h4>
+  <button id="editBtn-${id}" class="edit-btn">Edit Point of Interest</button>
+  </div><hr>
+  `
+}
 
-
-export {createDash}
+export {createDash, interestComponent}
