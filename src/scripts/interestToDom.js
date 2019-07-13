@@ -1,10 +1,13 @@
 import {API} from "./api.js"
 import {interestComponent} from "./mainComponent.js"
-import {editPoiEl} from "./eventListeners.js"
+import {editPoiEl, deletePOIEl} from "./eventListeners.js"
 
 function interestsToDom () {
 let interestContainer = document.querySelector("#interests-container")
+let miraInterests = document.createElement("h2")
+miraInterests.textContent = "Mira's Points of Interest"
 interestContainer.innerHTML = ""
+interestContainer.appendChild(miraInterests)
   API.getData("interests", "?_expand=place")
   .then(data => {
     data.forEach(obj => {
@@ -13,6 +16,7 @@ interestContainer.innerHTML = ""
       interests.innerHTML += POI
     })
       editPoiEl()
+      deletePOIEl()
   })
 }
 

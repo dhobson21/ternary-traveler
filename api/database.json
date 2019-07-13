@@ -18,20 +18,20 @@
   ],
   "interests": [
     {
-      "id": 1,
       "placeId": 1,
       "name": "Local Market",
       "description": "Local market where you can purchase local products and try the local food",
-      "cost": 0,
-      "review": "I liked it a lot"
+      "id": 1,
+      "cost": "100",
+      "review": "It was cool i guess"
     },
     {
-      "placeId": "2",
-      "name": "My house",
-      "description": "Where I live",
-      "cost": "69",
+      "placeId": 2,
+      "name": "The plaza",
+      "description": "So many great people. It's crowded",
+      "cost": "0",
       "review": "",
-      "id": 2
+      "id": 4
     }
   ]
 }

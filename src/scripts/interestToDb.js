@@ -7,7 +7,7 @@ function addPoiToDb() {
   let descrip = document.querySelector("#newInterest-descrip").value
   let cost = document.querySelector("#newInterest-cost").value
   let place = document.querySelector("#newInterest-place").value
-  let newPoint = createNewPoint(name, descrip, cost, place)
+  let newPoint = createNewPoint(name, descrip, cost, +place)
   API.addData("interests", newPoint)
   .then(interestsToDom)
 

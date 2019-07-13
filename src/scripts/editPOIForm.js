@@ -3,6 +3,7 @@ function editInterestForm (id, cost, review) {
 
     let pointToEdit = document.querySelector(`#POI-${id}`)
     let editInterestForm = document.createElement("form")
+    editInterestForm.setAttribute("id", `editPOIForm-${id}`)
     let interestCostContainer = document.createElement("fieldset")
     let interestCostInput = document.createElement("input")
     let interestCostLabel = document.createElement("label")
@@ -10,20 +11,24 @@ function editInterestForm (id, cost, review) {
     interestCostInput.setAttribute("type", "text")
     interestCostInput.setAttribute("name", "edited-interest-cost")
     interestCostInput.setAttribute("id", `editedInterestCost-${id}`)
-    interestCostInput.setAttribute("placeholder", `${cost}`)
+    interestCostInput.setAttribute("value", `${cost}`)
     let interestReviewContainer = document.createElement("fieldset")
     let interestReviewInput = document.createElement("textarea")
     let interestReviewLabel = document.createElement("label")
     interestReviewLabel.textContent = "New Review of Point of Interest"
     interestReviewInput.setAttribute("name", "EditedInterest-review")
     interestReviewInput.setAttribute("id", `editedInterestReview-${id}`)
-    interestReviewInput.setAttribute("placeholder",  `${review}`)
+    interestReviewInput.textContent = `${review}`
     interestReviewInput.setAttribute("cols", "30")
     interestReviewInput.setAttribute("rows", "5")
     let saveEditedPOIBtn = document.createElement("button")
     saveEditedPOIBtn.setAttribute("id", `saveEdit-${id}`)
     saveEditedPOIBtn.setAttribute("class", "saveEditBtn")
     saveEditedPOIBtn.textContent = "Save Point of Interest"
+    let cancelEditedPOIBtn = document.createElement("button")
+    cancelEditedPOIBtn.setAttribute("id", `cancelEditBtn-${id}`)
+    cancelEditedPOIBtn.textContent = "Cancel"
+
 
     interestCostContainer.appendChild(interestCostLabel)
     interestCostContainer.appendChild(interestCostInput)
@@ -34,6 +39,7 @@ function editInterestForm (id, cost, review) {
     editInterestForm.appendChild(interestCostContainer)
     editInterestForm.appendChild(interestReviewContainer)
     editInterestForm.appendChild(saveEditedPOIBtn)
+    editInterestForm.appendChild(cancelEditedPOIBtn)
     pointToEdit.appendChild(editInterestForm)
 }
 else {
@@ -46,14 +52,14 @@ else {
   interestCostInput.setAttribute("type", "text")
   interestCostInput.setAttribute("name", "edited-interest-cost")
   interestCostInput.setAttribute("id", `editedInterestCost-${id}`)
-  interestCostInput.setAttribute("placeholder", `${cost}`)
+  interestCostInput.setAttribute("value", `${cost}`)
   let interestReviewContainer = document.createElement("fieldset")
   let interestReviewInput = document.createElement("textarea")
   let interestReviewLabel = document.createElement("label")
   interestReviewLabel.textContent = "New Review of Point of Interest"
   interestReviewInput.setAttribute("name", "EditedInterest-review")
   interestReviewInput.setAttribute("id", `editedInterestReview-${id}`)
-  interestReviewInput.setAttribute("placeholder", "Enter New Review")
+  interestReviewInput.setAttribute("value", "Enter New Review")
   interestReviewInput.setAttribute("cols", "30")
   interestReviewInput.setAttribute("rows", "5")
   let saveEditedPOIBtn = document.createElement("button")

@@ -1,6 +1,10 @@
 const API = {
-  getData(entity, id) {
-    if (id) {
+  getData(entity, id, expand) {
+    if (expand) {
+      return fetch(`http://localhost:8088/${entity}/${id}${expand}`)
+      .then(response =>response.json())
+    }
+    else if (id) {
       return fetch(`http://localhost:8088/${entity}/${id}`)
       .then(response =>response.json())
     }

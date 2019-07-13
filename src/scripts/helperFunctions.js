@@ -8,8 +8,11 @@ function createNewPoint (name, descrip, cost, place) {
   }
 }
 
-function createEditedObj (id, cost, review) {
+function createEditedPOI(placeId, name, description, id, cost, review) {
   return {
+    placeId,
+    name,
+    description,
     id: id,
     cost: cost,
     review: review
@@ -17,4 +20,4 @@ function createEditedObj (id, cost, review) {
 }
 
 
-export {createNewPoint, createEditedObj}
+export {createNewPoint, createEditedPOI}
