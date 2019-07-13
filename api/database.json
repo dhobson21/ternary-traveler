@@ -17,12 +17,21 @@
     }
   ],
   "interests": [
-    { "id": 1,
+    {
       "placeId": 1,
       "name": "Local Market",
       "description": "Local market where you can purchase local products and try the local food",
-      "cost": 0.00,
-      "review": ""
-      }
+      "id": 1,
+      "cost": "100",
+      "review": "It was cool i guess"
+    },
+    {
+      "placeId": 2,
+      "name": "The plaza",
+      "description": "So many great people. It's crowded",
+      "cost": "0",
+      "review": "",
+      "id": 4
+    }
   ]
 }
